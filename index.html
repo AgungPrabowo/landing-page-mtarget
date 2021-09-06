@@ -105,7 +105,45 @@
                   </v-card>
                 </v-col>
                 <v-col v-else cols="12">
-                  <v-card>Mobile</v-card>
+                  <v-row>
+                    <v-col cols="12">
+                      <div class="d-flex justify-center">
+                        <div style="border-radius: 10px 10px 0 0;"
+                          class="orange accent-3 white--text py-3 px-9 font-weight-bold title">Made for Marketers</div>
+                      </div>
+                      <v-card class="pa-10" elevation="10">
+                        <div v-for="item in marketers" :key="item.img" class="d-flex flex-column">
+                          <div>
+                            <v-img :src="item.img" />
+                          </div>
+                          <span class="font-weight-bold headline grey--text text--darken-1 mb-4">{{item.title}}</span>
+                          <span>{{item.desc}}</span>
+                          <div class="mt-5">
+                            <v-btn color="warning" outlined>{{item.btnTitle}}</v-btn>
+                          </div>
+                        </div>
+                      </v-card>
+                    </v-col>
+                    <v-col cols="12">
+                      <div class="d-flex justify-center">
+                        <div style="border-radius: 10px 10px 0 0;"
+                          class="deep-purple accent-3 white--text py-3 px-9 font-weight-bold title">Made for Developers
+                        </div>
+                      </div>
+                      <v-card class="pa-10" elevation="10">
+                        <div v-for="item in developers" :key="item.img" class="d-flex flex-column">
+                          <div>
+                            <v-img :src="item.img" />
+                          </div>
+                          <span class="font-weight-bold headline grey--text text--darken-1 mb-4">{{item.title}}</span>
+                          <span>{{item.desc}}</span>
+                          <div class="mt-5">
+                            <v-btn color="warning" outlined>{{item.btnTitle}}</v-btn>
+                          </div>
+                        </div>
+                      </v-card>
+                    </v-col>
+                  </v-row>
                 </v-col>
               </v-row> 
             </v-flex>
