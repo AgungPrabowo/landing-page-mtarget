@@ -37,6 +37,274 @@
                     highest ROI for your campaign."</div>
                 </v-col>
                 <v-col cols="12">
+                  <v-row>
+                    <v-col class="align-center d-flex justify-center">
+                      <div class="display-1 grey--text text--darken-1 font-weight-bold">Marketing <br /> Channels</div>
+                    </v-col>
+                    <v-col>
+                      <v-img src="images/professional-color.png" style="border-radius: 10px 10px 0 0;" width="250px"
+                        height="150" class="text-center align-center">
+                        <div class="font-weight-bold white--text title">Professional</div>
+                        <div class="white--text mb-5">The prefect spot to start</div>
+                        <v-btn color="white" class="font-weight-bold" outlined>Get Started</v-btn>
+                      </v-img>
+                    </v-col>
+                    <v-col>
+                      <v-img src="images/business-color.png" style="border-radius: 10px 10px 0 0;" width="250px"
+                        height="150" class="text-center align-center">
+                        <div class="font-weight-bold white--text title">Business</div>
+                        <div class="white--text mb-1">Essential to level up your marketing</div>
+                        <v-btn color="white" class="font-weight-bold" outlined>Talk With us</v-btn>
+                      </v-img>
+                    </v-col>
+                    <v-col>
+                      <v-img src="images/enterprise-color.png" style="border-radius: 10px 10px 0 0;" width="250px"
+                        height="150" class="text-center align-center">
+                        <div class="font-weight-bold white--text title">Enterprise</div>
+                        <div class="white--text mb-5">Ideal for customer centric brands</div>
+                        <v-btn color="white" class="font-weight-bold" outlined>Request Demo</v-btn>
+                      </v-img>
+                    </v-col>
+                  </v-row>
+                  <v-card :style="$vuetify.breakpoint.smAndUp ? 'font-size: 14px;' : 'font-size: 10px;'" style="border-radius: 10px;" class="pa-5"
+                    elevation="7">
+                    <!-- Start Email -->
+                    <v-row>
+                      <v-col class="d-flex" style="cursor: pointer;"
+                        @click="() => marketingChannels.email.parent.viewMore = !marketingChannels.email.parent.viewMore">
+                        <v-icon :size="sizeIcon" color="orange accent-3">{{marketingChannels.email.parent.viewMore ?
+                          'mdi-chevron-down' : 'mdi-chevron-right'}}</v-icon>
+                        <div class="font-weight-bold ml-2 orange--text text--accent-3">
+                          {{marketingChannels.email.parent.name}}
+                        </div>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.email.parent.professional ? 'grey darken-4' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.email.parent.business ? 'deep-purple darken-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.email.parent.enterprise ? 'orange accent-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                    </v-row>
+                    <div v-show="marketingChannels.email.parent.viewMore">
+                      <v-row v-for="item in marketingChannels.email.childreen" :key="item.name" class="mt-3">
+                        <v-col>
+                          <div class="ml-8">{{item.name}}</div>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.professional ? 'grey darken-4' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.business ? 'deep-purple darken-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.enterprise ? 'orange accent-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                      </v-row>
+                    </div>
+                    <!-- End Email -->
+  
+                    <!-- Start Web Push Notification -->
+                    <v-row>
+                      <v-col class="d-flex" style="cursor: pointer;"
+                        @click="() => marketingChannels.wpn.parent.viewMore = !marketingChannels.wpn.parent.viewMore">
+                        <v-icon :size="sizeIcon" color="orange accent-3">{{marketingChannels.wpn.parent.viewMore ?
+                          'mdi-chevron-down' : 'mdi-chevron-right'}}</v-icon>
+                        <div class="font-weight-bold ml-2 orange--text text--accent-3">
+                          {{marketingChannels.wpn.parent.name}}
+                        </div>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.wpn.parent.professional ? 'grey darken-4' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.wpn.parent.business ? 'deep-purple darken-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.wpn.parent.enterprise ? 'orange accent-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                    </v-row>
+                    <div v-show="marketingChannels.wpn.parent.viewMore">
+                      <v-row v-for="item in marketingChannels.wpn.childreen" :key="item.name" class="mt-3">
+                        <v-col>
+                          <div class="ml-8">{{item.name}}</div>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.professional ? 'grey darken-4' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.business ? 'deep-purple darken-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.enterprise ? 'orange accent-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                      </v-row>
+                    </div>
+                    <!-- End Web Push Notification -->
+  
+                    <!-- Start App Push Notification -->
+                    <v-row>
+                      <v-col class="d-flex" style="cursor: pointer;"
+                        @click="() => marketingChannels.apn.parent.viewMore = !marketingChannels.apn.parent.viewMore">
+                        <v-icon :size="sizeIcon" color="orange accent-3">{{marketingChannels.apn.parent.viewMore ?
+                          'mdi-chevron-down' : 'mdi-chevron-right'}}</v-icon>
+                        <div class="font-weight-bold ml-2 orange--text text--accent-3">
+                          {{marketingChannels.apn.parent.name}}
+                        </div>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.apn.parent.professional ? 'grey darken-4' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.apn.parent.business ? 'deep-purple darken-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.apn.parent.enterprise ? 'orange accent-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                    </v-row>
+                    <div v-show="marketingChannels.apn.parent.viewMore">
+                      <v-row v-for="item in marketingChannels.apn.childreen" :key="item.name" class="mt-3">
+                        <v-col>
+                          <div class="ml-8">{{item.name}}</div>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.professional ? 'grey darken-4' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.business ? 'deep-purple darken-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.enterprise ? 'orange accent-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                      </v-row>
+                    </div>
+                    <!-- End App Push Notification -->
+  
+                    <!-- Start Dynamic Banner -->
+                    <v-row>
+                      <v-col class="d-flex" style="cursor: pointer;"
+                        @click="() => marketingChannels.db.parent.viewMore = !marketingChannels.db.parent.viewMore">
+                        <v-icon :size="sizeIcon" color="orange accent-3">{{marketingChannels.db.parent.viewMore ?
+                          'mdi-chevron-down' : 'mdi-chevron-right'}}</v-icon>
+                        <div class="font-weight-bold ml-2 orange--text text--accent-3">
+                          {{marketingChannels.db.parent.name}}
+                        </div>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.db.parent.professional ? 'grey darken-4' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.db.parent.business ? 'deep-purple darken-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.db.parent.enterprise ? 'orange accent-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                    </v-row>
+                    <div v-show="marketingChannels.db.parent.viewMore">
+                      <v-row v-for="item in marketingChannels.db.childreen" :key="item.name" class="mt-3">
+                        <v-col>
+                          <div class="ml-8">{{item.name}}</div>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.professional ? 'grey darken-4' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.business ? 'deep-purple darken-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.enterprise ? 'orange accent-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                      </v-row>
+                    </div>
+                    <!-- End Dynamic Banner -->
+  
+                    <!-- Start WhatsApp -->
+                    <v-row>
+                      <v-col class="d-flex" style="cursor: pointer;"
+                        @click="() => marketingChannels.wa.parent.viewMore = !marketingChannels.wa.parent.viewMore">
+                        <v-icon :size="sizeIcon" color="orange accent-3">{{marketingChannels.wa.parent.viewMore ?
+                          'mdi-chevron-down' : 'mdi-chevron-right'}}</v-icon>
+                        <div class="font-weight-bold ml-2 orange--text text--accent-3">
+                          {{marketingChannels.wa.parent.name}}
+                        </div>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.wa.parent.professional ? 'grey darken-4' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.wa.parent.business ? 'deep-purple darken-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                      <v-col class="justify-center d-flex">
+                        <v-icon :size="sizeIcon"
+                          :color="marketingChannels.wa.parent.enterprise ? 'orange accent-3' : 'grey'">
+                          mdi-check-bold</v-icon>
+                      </v-col>
+                    </v-row>
+                    <div v-show="marketingChannels.wa.parent.viewMore">
+                      <v-row v-for="item in marketingChannels.wa.childreen" :key="item.name" class="mt-3">
+                        <v-col>
+                          <div class="ml-8">{{item.name}}</div>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.professional ? 'grey darken-4' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.business ? 'deep-purple darken-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                        <v-col class="justify-center d-flex">
+                          <v-icon :size="sizeIcon" :color="item.enterprise ? 'orange accent-3' : 'grey'">
+                            mdi-check-bold</v-icon>
+                        </v-col>
+                      </v-row>
+                    </div>
+                    <!-- End WhatsApp -->
+                  </v-card>
+                </v-col>
+                <v-col cols="12">
                   <div class="display-1 font-weight-bold text-center grey--text text--darken-1 mb-3">Let's Hear What We
                     Can
                     Do For You</div>
@@ -158,7 +426,11 @@
       new Vue({
         el: "#app",
         vuetify: new Vuetify(),
-        computed: {},
+        computed: {
+          sizeIcon() {
+            return this.$vuetify.breakpoint.smAndUp ? '24' : '16';
+          }
+        },
         data: () => ({
           marketers: [
           {
@@ -188,6 +460,65 @@
             btnTitle: "Give it a try"
           },
         ],
+        marketingChannels: {
+          email: {
+            parent: {
+              name: "Email", professional: true, business: true, enterprise: true, viewMore: false,
+            },
+            childreen: [
+              { name: "Contact Book", professional: true, business: true, enterprise: true },
+              { name: "Personalization Code", professional: true, business: true, enterprise: true },
+              { name: "Drag & Drop Composer", professional: true, business: true, enterprise: true },
+              { name: "Email Automation", professional: true, business: true, enterprise: true },
+              { name: "Email Scheduler", professional: true, business: true, enterprise: true },
+              { name: "Campaign A/B Test", professional: true, business: true, enterprise: true },
+              { name: "Customer Insight", professional: false, business: true, enterprise: true },
+              { name: "Campaign Analytics", professional: false, business: true, enterprise: true },
+              { name: "AI Conversational Email", professional: false, business: false, enterprise: true },
+            ]
+          },
+          wpn: {
+            parent: {
+              name: "Web Push Notification", professional: false, business: true, enterprise: true, viewMore: false,
+            },
+            childreen: [
+              { name: "Opt-in generator", professional: false, business: true, enterprise: true },
+              { name: "Bulk Web Push", professional: false, business: true, enterprise: true },
+              { name: "Campaign Analytics", professional: false, business: true, enterprise: true },
+              { name: "Targeted Web Push (Behavior)", professional: false, business: false, enterprise: true },
+            ]
+          },
+          apn: {
+            parent: {
+              name: "App Push Notification", professional: false, business: false, enterprise: true, viewMore: false,
+            },
+            childreen: [
+              { name: "Opt-in generator", professional: false, business: true, enterprise: true },
+              { name: "Targeted App Push (Behavior)", professional: false, business: true, enterprise: true },
+              { name: "Bulk App Push", professional: false, business: false, enterprise: true },
+            ]
+          },
+          db: {
+            parent: {
+              name: "Dynamic Banner", professional: false, business: false, enterprise: true, viewMore: false,
+            },
+            childreen: [
+              { name: "Static Banner", professional: false, business: true, enterprise: true },
+              { name: "Audience Persona Generator", professional: false, business: false, enterprise: true },
+              { name: "Dynamic Banner (Behavior)", professional: false, business: false, enterprise: true },
+            ]
+          },
+          wa: {
+            parent: {
+              name: "WhatsApp", professional: false, business: false, enterprise: true, viewMore: false,
+            },
+            childreen: [
+              { name: "Template Message", professional: false, business: false, enterprise: true },
+              { name: "Session Message", professional: false, business: false, enterprise: true },
+              { name: "WABA Dashboard", professional: false, business: false, enterprise: true },
+            ]
+          },
+        }
         }),
       });
     </script>
