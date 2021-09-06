@@ -60,6 +60,53 @@
                   <div class="text-center">We make it possible for you to understand your customers better through data.
                   </div>
                 </v-col>
+                <v-col v-if="$vuetify.breakpoint.smAndUp" cols="12">
+                  <v-row>
+                    <v-col cols="6" class="d-flex justify-center">
+                      <div style="border-radius: 10px 10px 0 0;"
+                        class="orange accent-3 white--text py-3 px-9 font-weight-bold title">Made for Marketers</div>
+                    </v-col>
+                    <v-col cols="6" class="d-flex justify-center">
+                      <div style="border-radius: 10px 10px 0 0;"
+                        class="deep-purple accent-3 white--text py-3 px-9 font-weight-bold title">Made for Developers
+                      </div>
+                    </v-col>
+                  </v-row>
+                  <v-card class="pa-10" elevation="5">
+                    <v-row>
+                      <v-col cols="5">
+                        <div v-for="item in marketers" :key="item.img" class="d-flex flex-column">
+                          <div>
+                            <v-img :src="item.img" />
+                          </div>
+                          <span class="font-weight-bold headline grey--text text--darken-1 mb-4">{{item.title}}</span>
+                          <span>{{item.desc}}</span>
+                          <div class="mt-5">
+                            <v-btn color="warning" outlined>{{item.btnTitle}}</v-btn>
+                          </div>
+                        </div>
+                      </v-col>
+                      <v-col cols="2" class="justify-center d-flex">
+                        <v-divider vertical />
+                      </v-col>
+                      <v-col cols="5">
+                        <div v-for="item in developers" :key="item.img" class="d-flex flex-column">
+                          <div>
+                            <v-img :src="item.img" />
+                          </div>
+                          <span class="font-weight-bold headline grey--text text--darken-1 mb-4">{{item.title}}</span>
+                          <span>{{item.desc}}</span>
+                          <div class="mt-5">
+                            <v-btn color="warning" outlined>{{item.btnTitle}}</v-btn>
+                          </div>
+                        </div>
+                      </v-col>
+                    </v-row>
+                  </v-card>
+                </v-col>
+                <v-col v-else cols="12">
+                  <v-card>Mobile</v-card>
+                </v-col>
               </v-row> 
             </v-flex>
           </v-container>
@@ -74,7 +121,36 @@
         el: "#app",
         vuetify: new Vuetify(),
         computed: {},
-        data: () => ({}),
+        data: () => ({
+          marketers: [
+          {
+            img: "images/flow.png",
+            title: "Flow",
+            desc: "Flow will make it possible for you to build a seamless automated cross channel customer experience, leading towards operational efficiency and revenue growth.",
+            btnTitle: "Learn More"
+          },
+          {
+            img: "images/persona.png",
+            title: "Persona",
+            desc: "Get to know your customers like never before. You are able to know who is ready for purchase or has started to slip away. This is beyond what works and what’s not.",
+            btnTitle: "Request Demo"
+          },
+        ],
+        developers: [
+          {
+            img: "images/e-billing.png",
+            title: "E-Billing",
+            desc: "No more hassle to comply with the Government’s online transaction regulations. Ebilling will help you to generate and provide transaction bills automatically.",
+            btnTitle: "Talk with us"
+          },
+          {
+            img: "images/smart-otp.png",
+            title: "Smart OTP",
+            desc: "Security is not something to mess around. With the latest technology, Smart OTP can be used for purposes like authentication and passwordless login.",
+            btnTitle: "Give it a try"
+          },
+        ],
+        }),
       });
     </script>
   </body>
