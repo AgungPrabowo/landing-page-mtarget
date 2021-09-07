@@ -16,6 +16,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
     />
+    <style>
+      .table-title {
+        font-size: 14px;
+      }
+    </style>
   </head>
 
   <body>
@@ -79,14 +84,14 @@
                       width="90%"
                       class="text-center align-center"
                     >
-                      <div v-if="$vuetify.breakpoint.smAndUp">
+                      <div v-if="$vuetify.breakpoint.smAndUp" class="table-title">
                         <div class="font-weight-bold white--text title">
                           Professional
                         </div>
                         <div class="white--text mb-5">
                           The prefect spot to start
                         </div>
-                        <v-btn color="white" class="font-weight-bold" outlined
+                        <v-btn color="white" class="font-weight-bold caption" outlined
                           >Get Started</v-btn
                         >
                       </div>
@@ -106,14 +111,14 @@
                       width="90%"
                       class="text-center align-center"
                     >
-                      <div v-if="$vuetify.breakpoint.smAndUp">
+                      <div v-if="$vuetify.breakpoint.smAndUp" class="table-title">
                         <div class="font-weight-bold white--text title">
                           Business
                         </div>
                         <div class="white--text mb-5">
                           Essential to level up your marketing
                         </div>
-                        <v-btn color="white" class="font-weight-bold" outlined
+                        <v-btn color="white" class="font-weight-bold caption" outlined
                           >Talk With us</v-btn
                         >
                       </div>
@@ -133,14 +138,14 @@
                       width="90%"
                       class="text-center align-center"
                     >
-                      <div v-if="$vuetify.breakpoint.smAndUp">
+                      <div v-if="$vuetify.breakpoint.smAndUp" class="table-title">
                         <div class="font-weight-bold white--text title">
                           Enterprise
                         </div>
                         <div class="white--text mb-5">
                           Ideal for customer centric brands
                         </div>
-                        <v-btn color="white" class="font-weight-bold" outlined
+                        <v-btn color="white" class="font-weight-bold caption" outlined
                           >Request Demo</v-btn
                         >
                       </div>
