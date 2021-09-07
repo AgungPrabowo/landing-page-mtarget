@@ -90,7 +90,10 @@
                           >Get Started</v-btn
                         >
                       </div>
-                      <div v-else class="font-weight-bold white--text display-1">
+                      <div
+                        v-else
+                        class="font-weight-bold white--text display-1"
+                      >
                         P
                       </div>
                     </v-img>
@@ -103,20 +106,23 @@
                       width="90%"
                       class="text-center align-center"
                     >
-                    <div v-if="$vuetify.breakpoint.smAndUp">
-                      <div class="font-weight-bold white--text title">
-                        Business
+                      <div v-if="$vuetify.breakpoint.smAndUp">
+                        <div class="font-weight-bold white--text title">
+                          Business
+                        </div>
+                        <div class="white--text mb-5">
+                          Essential to level up your marketing
+                        </div>
+                        <v-btn color="white" class="font-weight-bold" outlined
+                          >Talk With us</v-btn
+                        >
                       </div>
-                      <div class="white--text mb-5">
-                        Essential to level up your marketing
-                      </div>
-                      <v-btn color="white" class="font-weight-bold" outlined
-                        >Talk With us</v-btn
+                      <div
+                        v-else
+                        class="font-weight-bold white--text display-1"
                       >
-                    </div>
-                    <div v-else class="font-weight-bold white--text display-1">
-                      B
-                    </div>
+                        B
+                      </div>
                     </v-img>
                   </v-col>
                   <v-col cols="3">
@@ -127,23 +133,26 @@
                       width="90%"
                       class="text-center align-center"
                     >
-                    <div v-if="$vuetify.breakpoint.smAndUp">
-                      <div class="font-weight-bold white--text title">
-                        Enterprise
+                      <div v-if="$vuetify.breakpoint.smAndUp">
+                        <div class="font-weight-bold white--text title">
+                          Enterprise
+                        </div>
+                        <div class="white--text mb-5">
+                          Ideal for customer centric brands
+                        </div>
+                        <v-btn color="white" class="font-weight-bold" outlined
+                          >Request Demo</v-btn
+                        >
                       </div>
-                      <div class="white--text mb-5">
-                        Ideal for customer centric brands
-                      </div>
-                      <v-btn color="white" class="font-weight-bold" outlined
-                        >Request Demo</v-btn
+                      <div
+                        v-else
+                        class="font-weight-bold white--text display-1"
                       >
-                    </div>
-                    <div v-else class="font-weight-bold white--text display-1">
-                      E
-                    </div>
+                        E
+                      </div>
                     </v-img>
                   </v-col>
-                  <v-col cols="12">
+                  <v-col cols="12" class="mb-3">
                     <v-card
                       :style="$vuetify.breakpoint.smAndUp ? 'font-size: 16px;' : 'font-size: 12px;'"
                       :class="$vuetify.breakpoint.smAndUp && 'mx-6'"
@@ -571,6 +580,18 @@
                       </div>
                       <!-- End WhatsApp -->
                     </v-card>
+                  </v-col>
+                  <v-col v-if="$vuetify.breakpoint.smAndDown" cols="3"></v-col>
+                  <v-col v-if="$vuetify.breakpoint.smAndDown" cols="3">
+                    <v-btn color="grey darken-2" style="font-size: 9px;" dark depressed dense>Get <br /> Started</v-btn>
+                  </v-col>
+                  <v-col v-if="$vuetify.breakpoint.smAndDown" cols="3">
+                    <v-btn color="deep-purple accent-3" style="font-size: 9px;" dark depressed dense>Talk <br /> with Us</v-btn>
+                  </v-col>
+                  <v-col v-if="$vuetify.breakpoint.smAndDown" cols="3">
+                    <v-btn color="orange accent-3" style="font-size: 9px;" dark depressed dense
+                      >Request <br/> Demo</v-btn
+                    >
                   </v-col>
                 </v-row>
               </v-col>
