@@ -24,7 +24,7 @@
         <v-layout row justify-center class="ma-5">
           <v-flex md12 lg8>
             <v-row>
-              <v-col cols="12">
+              <v-col cols="12" class="mb-10">
                 <div
                   class="
                     font-weight-bold
@@ -43,10 +43,23 @@
                   strategies to bring the highest ROI for your campaign."
                 </div>
               </v-col>
-              <v-col cols="12">
+              <v-col v-if="$vuetify.breakpoint.smAndDown" cols="12">
+                <div
+                  class="
+                    headline
+                    grey--text
+                    text-center text--darken-1
+                    font-weight-bold
+                  "
+                >
+                  Marketing Channels
+                </div>
+              </v-col>
+              <v-col cols="12" class="mb-10">
                 <v-row dense no-gutters>
                   <v-col cols="3" class="align-center d-flex justify-center">
                     <div
+                      v-if="$vuetify.breakpoint.smAndUp"
                       class="
                         display-1
                         grey--text
@@ -60,31 +73,37 @@
                   </v-col>
                   <v-col cols="3">
                     <v-img
+                      :height="$vuetify.breakpoint.smAndUp ? 150 : 70"
                       src="images/professional-color.png"
                       style="border-radius: 10px 10px 0 0"
-                      height="150"
                       width="90%"
                       class="text-center align-center"
                     >
-                      <div class="font-weight-bold white--text title">
-                        Professional
+                      <div v-if="$vuetify.breakpoint.smAndUp">
+                        <div class="font-weight-bold white--text title">
+                          Professional
+                        </div>
+                        <div class="white--text mb-5">
+                          The prefect spot to start
+                        </div>
+                        <v-btn color="white" class="font-weight-bold" outlined
+                          >Get Started</v-btn
+                        >
                       </div>
-                      <div class="white--text mb-5">
-                        The prefect spot to start
+                      <div v-else class="font-weight-bold white--text display-1">
+                        P
                       </div>
-                      <v-btn color="white" class="font-weight-bold" outlined
-                        >Get Started</v-btn
-                      >
                     </v-img>
                   </v-col>
                   <v-col cols="3">
                     <v-img
+                      :height="$vuetify.breakpoint.smAndUp ? 150 : 70"
                       src="images/business-color.png"
                       style="border-radius: 10px 10px 0 0"
-                      height="150"
                       width="90%"
                       class="text-center align-center"
                     >
+                    <div v-if="$vuetify.breakpoint.smAndUp">
                       <div class="font-weight-bold white--text title">
                         Business
                       </div>
@@ -94,16 +113,21 @@
                       <v-btn color="white" class="font-weight-bold" outlined
                         >Talk With us</v-btn
                       >
+                    </div>
+                    <div v-else class="font-weight-bold white--text display-1">
+                      B
+                    </div>
                     </v-img>
                   </v-col>
                   <v-col cols="3">
                     <v-img
+                      :height="$vuetify.breakpoint.smAndUp ? 150 : 70"
                       src="images/enterprise-color.png"
                       style="border-radius: 10px 10px 0 0"
-                      height="150"
                       width="90%"
                       class="text-center align-center"
                     >
+                    <div v-if="$vuetify.breakpoint.smAndUp">
                       <div class="font-weight-bold white--text title">
                         Enterprise
                       </div>
@@ -113,13 +137,18 @@
                       <v-btn color="white" class="font-weight-bold" outlined
                         >Request Demo</v-btn
                       >
+                    </div>
+                    <div v-else class="font-weight-bold white--text display-1">
+                      E
+                    </div>
                     </v-img>
                   </v-col>
                   <v-col cols="12">
                     <v-card
                       :style="$vuetify.breakpoint.smAndUp ? 'font-size: 16px;' : 'font-size: 12px;'"
+                      :class="$vuetify.breakpoint.smAndUp && 'mx-6'"
                       style="border-radius: 10px"
-                      class="pa-5 mx-6"
+                      class="pa-5"
                       elevation="7"
                     >
                       <!-- Start Email -->
